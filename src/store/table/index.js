@@ -9,7 +9,8 @@ const tableSlice = createSlice({
     name: "table",
     initialState,
     reducers: {
-        setTable(state, action) {
-            state.table = action.payload
-        }}
+        setPlayer(state,action){
+            state.players = action.payload
+        }    
+    }
 })
