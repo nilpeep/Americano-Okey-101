@@ -21,6 +21,6 @@ const tableSlice = createSlice({
     }
 })
 
-export const {setPlayer, setPlayers, setActivePlayer} = tableSlice.actions
+export const tableActions = tableSlice.actions
 
 export default tableSlice.reducer
