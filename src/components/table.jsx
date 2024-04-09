@@ -8,7 +8,14 @@ import { PLAYER_COUNT } from './consts'
 
 export const Table = () => {
 
-  const {players} = useTable()
+  const {players , activePlayer } = useTable()
+
+  const pattern = {
+    1:[3,4,1,2],
+    2:[4,1,2,3],
+    3:[1,2,3,4],
+    4:[2,3,4,1]
+  }[activePlayer]
   return (
     <div className='w-[1000px] h-[1000px] bg-blue-500 mx-auto my-5 relative'> 
     {
