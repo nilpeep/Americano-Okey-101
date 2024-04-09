@@ -10,7 +10,17 @@ const tableSlice = createSlice({
     initialState,
     reducers: {
         setPlayer(state,action){
+            state.players[action.payload.plaayerId] = action.payload
+        },
+        setPlayers(state, action){
             state.players = action.payload
-        }    
+        },
+        setActivePlayer(state, action){
+            state.activePlayer = action.payload
+        }
     }
 })
+
+export const {setPlayer, setPlayers, setActivePlayer} = tableSlice.actions
+
+export default tableSlice.reducer
