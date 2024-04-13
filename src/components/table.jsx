@@ -2,6 +2,7 @@ import React from 'react'
 import { useTable } from '../store/table/hooks'
 import { PLAYER_COUNT } from './consts'
 import classNames from 'classnames'
+import { setPlayer } from '../store/table/actions'
 
 
 
@@ -18,23 +19,32 @@ export const Table = () => {
     4:[2,3,4,1]
   }[activePlayer]
   return (
-    <div className='w-[1000px] h-[1000px] bg-blue-500 mx-auto my-5 relative'> 
+    <div
+    className='w-[1000px] h-[1000px] bg-blue-500 mx-auto my-5 relative'> 
     {
-      PLAYER_COUNT !== players.length && (
+      PLAYER_COUNT !== Object.keys(players).length && (
         <div className='text-center text-white absolute top-0 left-0 px-4 h-8 text-sm bg-orange-500 rounded-br'>
-          <p>Waiting for <b className='mx-0.5'>{PLAYER_COUNT - players.length}</b>  more players</p>
+          <p>Waiting for <b className='mx-0.5'>{PLAYER_COUNT - Object.keys(players).length}</b>  more players</p>
         </div>)
     }
     {
       (pattern || [1,2,3,4]).map((seatId, index) =>(
-        <div className={classNames("w-52 h-52 rounded-full border border-white flex items-center justify-center absolute", {
+        <button
+        key={seatId}
+        type='button'
+        onClick={()=>{
+          setPlayer(seatId,{
+            name: `Player ${seatId}`
+          })
+        }}
+        className={classNames("w-52 h-52 rounded-full border border-white flex items-center justify-center absolute", {
           'top-10 left-1/2 -translate-x-1/2':index===0,
           'top-1/2 right-10 -translate-y-1/2':index===1,
           'left-1/2 bottom-10 -translate-x-1/2':index===2,
           'top-1/2 left-10 -translate-y-1/2':index===3
         })}>
           empty,{seatId}
-        </div>
+        </button>
       ))
     }
     </div>

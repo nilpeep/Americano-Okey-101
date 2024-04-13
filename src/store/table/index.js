@@ -1,8 +1,8 @@
 import {createSlice} from "@reduxjs/toolkit"
 
 const initialState = {
-    players:[],
-    activePlayer:4
+    players:{},
+    activePlayer:null
 }
 
 const tableSlice = createSlice({
