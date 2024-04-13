@@ -24,7 +24,13 @@ export const Table = () => {
           <p>Waiting for <b className='mx-0.5'>{PLAYER_COUNT - players.length}</b>  more players</p>
         </div>)
     }
-    {JSON.stringify(players, null,2)}
+    {
+      [1,2,3,4].map((seatId, index) =>(
+        <div className='w-52 h-52 rounded-full border border-white flex items-center justify-center'>
+          empty
+        </div>
+      ))
+    }
     </div>
   )
 }
