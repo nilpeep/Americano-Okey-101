@@ -26,14 +26,14 @@ export const Table = () => {
         </div>)
     }
     {
-      [1,2,3,4].map((seatId, index) =>(
+      (pattern || [1,2,3,4]).map((seatId, index) =>(
         <div className={classNames("w-52 h-52 rounded-full border border-white flex items-center justify-center absolute", {
           'top-10 left-1/2 -translate-x-1/2':index===0,
           'top-1/2 right-10 -translate-y-1/2':index===1,
           'left-1/2 bottom-10 -translate-x-1/2':index===2,
           'top-1/2 left-10 -translate-y-1/2':index===3
         })}>
-          empty,{index}
+          empty,{seatId}
         </div>
       ))
     }

@@ -2,7 +2,7 @@ import {createSlice} from "@reduxjs/toolkit"
 
 const initialState = {
     players:[],
-    activePlayer:null
+    activePlayer:4
 }
 
 const tableSlice = createSlice({
