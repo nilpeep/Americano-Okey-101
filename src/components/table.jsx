@@ -2,7 +2,7 @@ import React from 'react'
 import { useTable } from '../store/table/hooks'
 import { PLAYER_COUNT } from './consts'
 import classNames from 'classnames'
-import { setPlayer } from '../store/table/actions'
+import { setActivePlayer, setPlayer } from '../store/table/actions'
 
 
 
@@ -36,7 +36,8 @@ export const Table = () => {
           setPlayer(seatId,{
             name: `Player ${seatId}`
           })
-          console.log(players)
+          setActivePlayer(seatId )
+          console.log(pattern)
         }}
         className={classNames("w-52 h-52 rounded-full border border-white flex items-center justify-center absolute", {
           'top-10 left-1/2 -translate-x-1/2':index===0,
