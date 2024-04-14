@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import table, { tableActions } from ".";
 
 
-export const setPlayer = (playerId, player) => {store.dispatch(tableActions.setPlayer({playerId, player}))
+export const setPlayer = (seatId, player) => {store.dispatch(tableActions.setPlayer({seatId , player}))
 console.log(`player ${playerId} setteed`)
 }
 

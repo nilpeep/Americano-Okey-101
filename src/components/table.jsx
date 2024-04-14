@@ -34,6 +34,7 @@ export const Table = () => {
         type='button'
         onClick={()=>{
           setPlayer(seatId,{
+            id:1,
             name: `Player ${seatId}`
           })
           setActivePlayer(seatId )

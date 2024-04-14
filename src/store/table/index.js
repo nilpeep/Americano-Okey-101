@@ -10,7 +10,7 @@ const tableSlice = createSlice({
     initialState,
     reducers: {
         setPlayer(state,action){
-            state.players[action.payload.playerId] = action.payload.player
+            state.players[action.payload.seatId ] = action.payload.player
         },
         setPlayers(state, action){
             state.players = action.payload
