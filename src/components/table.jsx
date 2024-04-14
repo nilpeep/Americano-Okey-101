@@ -3,6 +3,7 @@ import { useTable } from '../store/table/hooks'
 import { PLAYER_COUNT } from './consts'
 import classNames from 'classnames'
 import { setActivePlayer, setPlayer } from '../store/table/actions'
+import { Player } from './player'
 
 
 
@@ -29,7 +30,18 @@ export const Table = () => {
     }
     {
       (pattern || [1,2,3,4]).map((seatId, index) =>{
-        if(players[seatId]) return null
+        if(players[seatId]){
+           return (<div
+          className={classNames("absolute", {
+            'top-10 left-1/2 -translate-x-1/2':index===0,
+            'top-1/2 right-10 -translate-y-1/2':index===1,
+            'left-1/2 bottom-10 -translate-x-1/2':index===2,
+            'top-1/2 left-10 -translate-y-1/2':index===3
+          })}
+          >
+            <Player player={players[seatId]}/>
+          </div>)
+        }
         return (
           <button
           key={seatId}
@@ -48,7 +60,9 @@ export const Table = () => {
             'left-1/2 bottom-10 -translate-x-1/2':index===2,
             'top-1/2 left-10 -translate-y-1/2':index===3
           })}>
-            empty,{seatId}
+            
+          {seatId}. is empty
+            
           </button>
         )
       })

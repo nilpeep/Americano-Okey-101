@@ -2,9 +2,15 @@ import {createSlice} from "@reduxjs/toolkit"
 
 const initialState = {
     players:{
-        1:{},
-        3:{},
-        4:{}
+        1:{
+            name:"Player 1"
+        },
+        3:{
+            name:"Player 3"
+        },
+        4:{
+            name:"Player 4"
+        }
     },
     activePlayer:null
 }
