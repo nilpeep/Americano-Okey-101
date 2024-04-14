@@ -36,6 +36,7 @@ export const Table = () => {
           setPlayer(seatId,{
             name: `Player ${seatId}`
           })
+          console.log(players)
         }}
         className={classNames("w-52 h-52 rounded-full border border-white flex items-center justify-center absolute", {
           'top-10 left-1/2 -translate-x-1/2':index===0,
