@@ -5,7 +5,7 @@ import table, { tableActions } from ".";
 
 
 export const setPlayer = (seatId, player) => {store.dispatch(tableActions.setPlayer({seatId , player}))
-console.log(`player ${playerId} setteed`)
+console.log(`player ${seatId} setteed`)
 }
 
 export const setPlayers = (players) => store.dispatch(tableActions.setPlayers(players))

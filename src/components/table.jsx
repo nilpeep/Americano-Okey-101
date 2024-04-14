@@ -28,27 +28,30 @@ export const Table = () => {
         </div>)
     }
     {
-      (pattern || [1,2,3,4]).map((seatId, index) =>(
-        <button
-        key={seatId}
-        type='button'
-        onClick={()=>{
-          setPlayer(seatId,{
-            id:1,
-            name: `Player ${seatId}`
-          })
-          setActivePlayer(seatId )
-          console.log(pattern)
-        }}
-        className={classNames("w-52 h-52 rounded-full border border-white flex items-center justify-center absolute", {
-          'top-10 left-1/2 -translate-x-1/2':index===0,
-          'top-1/2 right-10 -translate-y-1/2':index===1,
-          'left-1/2 bottom-10 -translate-x-1/2':index===2,
-          'top-1/2 left-10 -translate-y-1/2':index===3
-        })}>
-          empty,{seatId}
-        </button>
-      ))
+      (pattern || [1,2,3,4]).map((seatId, index) =>{
+        if(players[seatId]) return null
+        return (
+          <button
+          key={seatId}
+          type='button'
+          onClick={()=>{
+            setPlayer(seatId,{
+              id:1,
+              name: `Player ${seatId}`
+            })
+            setActivePlayer(seatId )
+            console.log(pattern)
+          }}
+          className={classNames("w-52 h-52 rounded-full border border-white flex items-center justify-center absolute", {
+            'top-10 left-1/2 -translate-x-1/2':index===0,
+            'top-1/2 right-10 -translate-y-1/2':index===1,
+            'left-1/2 bottom-10 -translate-x-1/2':index===2,
+            'top-1/2 left-10 -translate-y-1/2':index===3
+          })}>
+            empty,{seatId}
+          </button>
+        )
+      })
     }
     </div>
   )
